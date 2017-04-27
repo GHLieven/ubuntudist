@@ -1,0 +1,17 @@
+alsa-utils
+chromium-browser
+dmz-cursor-theme
+faenza-icon-theme
+gksu
+jwm
+leafpad
+lxappearance
+lxterminal
+network-manager-gnome
+pcmanfm
+plymouth-theme-ubuntu-logo
+slim
+ubuntu-wallpapers
+upower
+volumeicon-alsa
+xorg
