@@ -1,3 +1,6 @@
+#!/bin/bash
+
+#before using, you should make this script executable (sudo chmod 700 distro2.sh)
 mount none -t proc /proc
 mount none -t sysfs /sys
 mount none -t devpts /dev/pts
