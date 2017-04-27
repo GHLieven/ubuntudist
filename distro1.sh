@@ -21,7 +21,7 @@ sudo rm chroot/distro2.sh
 sudo rm chroot/packages.txt
 #in the next line, add files or folders you want to have in the home-folder of your image to the CONFIG variable.
 #this way, you can customize the look and feel of your image. you should separate different files or folders by a space. 
-CONFIG='.config'
+CONFIG='.config .gtkrc-2.0 .jwmrc mem.sh mem0.sh'
 cd ~ && for i in $CONFIG
 do
         sudo cp -rpv --parents $i work/chroot/etc/skel
