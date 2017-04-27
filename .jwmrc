@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+<JWM>
+
+    <StartupCommand>volumeicon</StartupCommand>
+    <StartupCommand>nm-applet</StartupCommand>
+
+    <!-- The root menu. -->
+    <RootMenu onroot="12" height="46">
+        <!-- <Include>/etc/jwm/debian-menu</Include> -->
+        <Program icon="terminal.svg" label="Terminal">lxterminal</Program>
+        <Program icon="folder.svg" label="Bestanden">pcmanfm</Program>
+        <Program icon="chromium-browser.svg" label="Webbrowser">chromium-browser</Program>
+        <Program icon="leafpad.svg" label="Teksteditor">leafpad</Program>
+        <Program icon="preferences-desktop-theme.svg" label"Uiterlijk">lxappearance</Program>
+        <Separator/>
+        <Program icon="view-refresh.svg" label="Herstarten">systemctl reboot</Program>
+        <Program icon="system-shutdown.svg" label="Afsluiten">systemctl poweroff</Program>
+    </RootMenu>
+
+    <!-- Options for program groups. -->
+    <Group>
+        <Option>tiled</Option>
+        <Option>aerosnap</Option>
+    </Group>
+    <Group>
+        <Class>Pidgin</Class>
+        <Option>sticky</Option>
+    </Group>
+    <Group>
+        <Name>xclock</Name>
+        <Option>drag</Option>
+        <Option>notitle</Option>
+    </Group>
+
+    <!-- Tray at the bottom. -->
+    <Tray x="0" y="-1" height="54" autohide="off">
+
+        <TrayButton icon="distributor-logo-ubuntu.svg">root:1</TrayButton>
+        <Spacer width="2"/>
+        <Pager labeled="true"/>
+
+        <TaskList maxwidth="256"/>
+
+        <Swallow width="95" name="xterm">xterm -fa 'Monospace' -fs 14 -fg "#000000" -bg "#FFFFC0" -e ./mem0.sh</Swallow>
+        <Spacer width="2"/>
+        <Dock/>
+        <Clock format="%H:%M"><Button mask="123">exec:xclock</Button></Clock>
+        <TrayButton label="+">showdesktop</TrayButton>
+    </Tray>
+
+    <!-- Visual Styles -->
+    <WindowStyle>
+        <Font>Monospace-11</Font>
+        <Width>4</Width>
+        <Height>28</Height>
+        <Corner>3</Corner>
+        <Foreground>#000000</Foreground>
+        <Background>#EEEEEE</Background>
+        <Outline>#EEEEEE</Outline>
+        <Opacity>0.5</Opacity>
+        <Active>
+            <Foreground>#FFFFFF</Foreground>
+            <Background>#444444</Background>
+            <Outline>#444444</Outline>
+            <Opacity>1.0</Opacity>
+        </Active>
+    </WindowStyle>
+    <TrayStyle group="true" list="all">
+        <Font>Monospace-11</Font>
+        <Background>#3B3B3B</Background>
+        <Foreground>#FFFFFF</Foreground>
+        <Outline>#3B3B3B</Outline>
+        <Active>
+            <Background>#FF7838</Background>
+        </Active>
+        <Opacity>0.75</Opacity>
+    </TrayStyle>
+    <PagerStyle>
+        <Outline>#FF7838</Outline>
+        <Foreground>#666666</Foreground>
+        <Background>#3B3B3B</Background>
+        <Text>#FFFFFF</Text>
+        <Active>
+            <Foreground>#3B3B3B</Foreground>
+            <Background>#FF7838</Background>
+        </Active>
+    </PagerStyle>
+    <MenuStyle>
+        <Font>Monospace-11</Font>
+        <Foreground>#FFFFFF</Foreground>
+        <Background>#3B3B3B</Background>
+        <Outline>#3B3B3B</Outline>
+        <Active>
+            <Foreground>#FFFFFF</Foreground>
+            <Background>#FF7838</Background>
+        </Active>
+        <Opacity>0.85</Opacity>
+    </MenuStyle>
+    <PopupStyle>
+        <Font>Monospace-11</Font>
+        <Foreground>#000000</Foreground>
+        <Background>#FFFFC0</Background>
+    </PopupStyle>
+
+    <!-- Path where icons can be found.
+         IconPath can be listed multiple times to allow searching
+         for icons in multiple paths.
+      -->
+    <IconPath>/usr/share/icons/Faenza/actions/scalable</IconPath>
+    <IconPath>/usr/share/icons/Faenza/apps/scalable</IconPath>
+    <IconPath>/usr/share/icons/Faenza/categories/scalable</IconPath>
+    <IconPath>/usr/share/icons/Faenza/devices/scalable</IconPath>
+    <IconPath>/usr/share/icons/Faenza/emblems/scalable</IconPath>
+    <IconPath>/usr/share/icons/Faenza/mimetypes/scalable</IconPath>
+    <IconPath>/usr/share/icons/Faenza/places/scalable</IconPath>
+    <IconPath>/usr/share/icons/Faenza/status/scalable</IconPath>
+    <IconPath>/usr/share/icons/Faenza/stock/scalable</IconPath>
+
+    <!-- Virtual Desktops -->
+    <!-- Desktop tags can be contained within Desktops for desktop names. -->
+    <Desktops width="3" height="2">
+        <!-- Default background. Note that a Background tag can be
+              contained within a Desktop tag to give a specific background
+              for that desktop.
+         -->
+        <Background type="image">/usr/share/backgrounds/warty-final-ubuntu.png</Background>
+    </Desktops>
+
+    <!-- Double click speed (in milliseconds) -->
+    <DoubleClickSpeed>400</DoubleClickSpeed>
+
+    <!-- Double click delta (in pixels) -->
+    <DoubleClickDelta>2</DoubleClickDelta>
+
+    <!-- The focus model (sloppy or click) -->
+    <FocusModel>sloppy</FocusModel>
+
+    <!-- The snap mode (none, screen, or border) -->
+    <SnapMode distance="10">border</SnapMode>
+
+    <!-- The move mode (outline or opaque) -->
+    <MoveMode>opaque</MoveMode>
+
+    <!-- The resize mode (outline or opaque) -->
+    <ResizeMode>opaque</ResizeMode>
+
+    <!-- Key bindings -->
+    <Key key="Up">up</Key>
+    <Key key="Down">down</Key>
+    <Key key="Right">right</Key>
+    <Key key="Left">left</Key>
+    <Key key="h">left</Key>
+    <Key key="j">down</Key>
+    <Key key="k">up</Key>
+    <Key key="l">right</Key>
+    <Key key="Return">select</Key>
+    <Key key="Escape">escape</Key>
+
+    <Key mask="A" key="Tab">nextstacked</Key>
+    <Key mask="A" key="F4">close</Key>
+    <Key mask="A" key="#">desktop#</Key>
+    <Key mask="A" key="F1">root:1</Key>
+    <Key mask="A" key="F2">window</Key>
+    <Key mask="A" key="F10">maximize</Key>
+    <Key mask="A" key="Right">rdesktop</Key>
+    <Key mask="A" key="Left">ldesktop</Key>
+    <Key mask="A" key="Up">udesktop</Key>
+    <Key mask="A" key="Down">ddesktop</Key>
+
+</JWM>
